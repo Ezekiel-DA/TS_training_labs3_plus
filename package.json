@@ -9,7 +9,8 @@
   "author": "NLV",
   "license": "ISC",
   "dependencies": {
-    "@inquirer/prompts": "^7.0.0"
+    "@inquirer/prompts": "^7.0.0",
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
