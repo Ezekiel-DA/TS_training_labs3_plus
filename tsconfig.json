@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "nodenext",
+    "target": "es2022",
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*"],
+}
