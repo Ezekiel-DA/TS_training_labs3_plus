@@ -101,3 +101,28 @@ function processInput(input: string | number): void {
 
 processInput(3)
 processInput('test')
+
+// Lab 5
+class Stack<Type> {
+  private data: Array<Type> = []
+
+  push(a: Type): number {
+    return this.data.push(a)
+  }
+
+  pop(): Type | undefined {
+    return this.data.pop()
+  }
+
+  get(id: number): Type {
+    return this.data[id]
+  }
+}
+
+const s = new Stack()
+s.push('a')
+s.push(1)
+s.push({test: true})
+console.log(s.get(1))
+console.log(s.pop())
+console.log(s.pop())
