@@ -103,26 +103,36 @@ processInput(3)
 processInput('test')
 
 // Lab 5
-class Stack<Type> {
+class Stack<Type extends { id: number }> {
   private data: Array<Type> = []
+  private indices: number[] = []
 
-  push(a: Type): number {
-    return this.data.push(a)
+  push(a: Type): void {
+    this.data.push(a)
+    this.indices.push(a.id)
   }
 
   pop(): Type | undefined {
+    this.indices.pop()
     return this.data.pop()
   }
 
   get(id: number): Type {
-    return this.data[id]
+    const idx = this.indices.findIndex((index) => index === id)
+    return this.data[idx]
   }
 }
 
 const s = new Stack()
-s.push('a')
-s.push(1)
-s.push({test: true})
+const a = { id: 0, someData: 'a' }
+const one = { id: 1, sub: { toto: true }, text: 'some text' }
+const test = { id: 5, ar: [1,2,3]}
+s.push(a)
+s.push(one)
+s.push(test)
+
 console.log(s.get(1))
+console.log(s.get(5))
+
 console.log(s.pop())
 console.log(s.pop())
